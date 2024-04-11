@@ -1,6 +1,6 @@
-//Explain the Fibonacci series and write a function to generate the first n numbers in the 
+//Explain the Fibonacci series and write a function to generate the first n numbers in the
 //Fibonacci sequence.
-   //understanding
+//understanding
 //series --  0, 1, 1, 2, 3, 5, 8, 13, 21, 34
 //solution
 /*
@@ -12,17 +12,18 @@ F6 = 3 + 5 = 8
 F7 = 5 + 8 = 13
  Fn = Fn-1 + Fn-2. 
  */
- function fibonacciNumber(value){
-    let previous=0;
-    let current=1;
-    let result=[];
-    result.push(previous);
+function fibonacciNumber(value) {
+  let previous = 0;
+  let current = 1;
+  let result = [];
+  result.push(previous);
+  result.push(current);
+  for (let i = 2; i < value; i++) {
+    let sum = previous + current;
+    previous = current;
+    current = sum;
     result.push(current);
-   for(let i=2;i<value;i++){
-       previous=current;
-       current=previous+current;
-       result.push(current);
-   }
-   return result.join(' ');
- }
- console.log(fibonacciNumber(5))
+  }
+  return result.join(" ");
+}
+console.log(fibonacciNumber(5));
